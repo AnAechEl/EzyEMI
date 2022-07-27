@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+  <title>EzyEMI</title>
+  <style>
+    body
+    {
+      margin: 5px;
+    }
+    table
+    {
+      border: solid 1px;
+      size: 1rem;
+    }
+    tr:nth-of-type(even)
+    {
+      background-color: rgb(246, 179, 179);
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">EzyEMI</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="page2.html">Calculator</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <script type="text/javascript">
+    function Calculator() {
+      const amount = document.getElementById("amount").value;
+      const rate = document.getElementById("rate").value;
+      const time = document.getElementById("time").value;
+
+      const a = parseFloat(amount);
+      const b = parseFloat(rate) / 100 / 12;
+      const c = parseFloat(time) * 12;
+
+      const d = Math.pow(1 + b, c);
+      const e = (a * d * b) / (d - 1);
+      const res = e.toFixed(2);
+      document.getElementById("result").innerHTML = res;
+    }
+
+    function addTable()
+    {
+      const amount = document.getElementById("amount").value;
+      const rate = document.getElementById("rate").value;
+      const time = document.getElementById("time").value;
+
+      const a = parseFloat(amount);
+      const b = parseFloat(rate) / 100 / 12;
+      const d = Math.pow(1 + b, c);
+      const e = (a * d * b) / (d - 1);
+      const res = e.toFixed(2);
+      document.getElementById("result").innerHTML = res;
+      const con = parseFloat(time) * 12;
+      var table ='';
+      var rows=con;
+      var cols=4;
+      for(var r=0;r<rows;r++)
+        {
+          table+='<tr>';
+          for(var c=0;c<cols;c++)
+          {
+            table+='<td colspan="2">'+(r+1)+'</td>';
+          }
+          table+='</tr>';
+        }
+        document.getElementById('table11').innerHTML=document.innerHTML='<table  border="1px"  width="100%">'+table+'</table>';
+    }
+  </script>
+  <br>
+  <form>
+    Enter your principle amount : <input type="number" id="amount"></input>
+    Enter the rate of interest : <input type="number" id="rate"></input>
+    Enter the tenure : <input type="number" id="time" ></input><br><br>
+    Total amount to be paid: <p id="result" text-align="center"></p>
+   
+    <input type="button" value="Calculate" onclick="Calculator()" >
+    <input type="button" value="Show Table" onclick="addTable()">
+    <br>
+    <table style="margin-right: 5px; margin-top: 5px;" width="100%" colspan="2">
+    <tr>
+      <th>Months</th>
+      <th>Amount</th>
+      <th>Interest</th>
+      <th>Remaining</th>
+
+    </tr>
+    
+    </table>
+    <p id="table11"></p>
+
+
+
+  </form>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>
