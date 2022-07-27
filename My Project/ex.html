@@ -1,0 +1,611 @@
+
+<!DOCTYPE html>
+<html lang="en" data-wf-page="5d2d70a499a6909b693d7966" data-wf-site="5d1460b0c4ad42120692e581">
+<head>
+
+<script type="40c274b4ff49de37763dd666-text/javascript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TL657WH');</script>
+
+
+<script async type="40c274b4ff49de37763dd666-text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-80362515-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+
+<style>
+    .footer .social-link{
+        font-size: 1.5rem;
+        color: #fff;
+        padding: 0px 4px;
+    }
+</style>
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'> <meta charset="utf-8">
+<title>Loan EMI calculator</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<meta name="description" content="Easy EMI Calculator - Calculate Equated Monthly Installment (EMI) for Home Loan / Vehicle Loan & Personal Loan in India. View the option to estimate Loan amount eligibility and Loan tenure.">
+<meta name="author" content="Paymatrix">
+<meta property="fb:app_id" content="547485808751889">
+<meta property="og:site_name" content="Paymatrix">
+<meta property="og:title" content="Loan EMI calculator">
+<meta property="og:url" content="https://paymatrix.in">
+<meta property="og:type" content="website">
+<meta property="og:image:ur" content="https://d1qeumaypnte8e.cloudfront.net/new_home_images/facebook-img.jpg">
+<meta name="google-site-verification" content="FkQWXyo6sCeIYoIZB9870s0JhGrz3w50WXsPCtokOEY" />
+<meta property="og:description" content="Easy EMI Calculator - Calculate Equated Monthly Installment (EMI) for Home Loan / Vehicle Loan & Personal Loan in India. View the option to estimate Loan amount eligibility and Loan tenure.">
+
+<link href='https://fonts.googleapis.com/css?family=Montserrat:500,700' rel='stylesheet' type='text/css'>
+<link href="https://paymatrix.in//application/static/css/loancal/normalize.css" rel="stylesheet" type="text/css">
+<link href="https://paymatrix.in//application/static/css/loancal/webflow.css" rel="stylesheet" type="text/css">
+<link href="https://paymatrix.in//application/static/css/loancal/paymatrix.webflow.css" rel="stylesheet" type="text/css">
+<!-- [if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript"></script><![endif] -->
+<script type="40c274b4ff49de37763dd666-text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script>
+<link rel="shortcut icon" type="image/png" href="https://d1qeumaypnte8e.cloudfront.net/new_home_images/fev-icon.png" />
+<link href="images/webclip.png" rel="apple-touch-icon">
+<style>
+        .footer .social-link{
+        font-size: 1.5rem;
+        color: #fff;
+        padding: 0px 4px;
+        }
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+        display: none !important;
+    }
+
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 100%;
+
+    }
+
+    th, td {
+        text-align: left;
+        padding: 8px;
+        border: 1px solid #B9DBFF;
+    }
+
+    tr:nth-child(odd){background-color: #E4F1FF}
+    #first-row{background-color: #3F95F2; color:#fff;}
+
+    .emi-tab{
+        cursor: pointer;
+    }
+    </style>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl" ng-cloak>
+
+<div data-collapse="medium" data-animation="default" data-duration="400" class="paymatrix-navbar w-nav">
+<div class="nav-container-fluid w-clearfix">
+<a href="https://paymatrix.in/" class="w-nav-brand"><img src="https://paymatrixuploads.s3.ap-southeast-1.amazonaws.com/paymatrix/paymatrix_logo_v1_resize.png" alt="logo" class="paymatrix-logo"></a>
+<nav role="navigation" class="nav-menu-2 w-nav-menu">
+<a href="https://play.google.com/store/apps/details?id=in.paymatrix.mobile" class="nav-btn-2 w-nav-link"><img src="https://paymatrixuploads.s3.ap-southeast-1.amazonaws.com/static/icons/google_play.png" alt="logo" class="" style="padding-bottom: 2px;">Download App</a>
+<a href="https://support.paymatrix.in/" class="nav-btn-2 w-nav-link"> <i class="fas fa-headset"></i> Support </a>
+<a href="https://paymatrix.in/home/offers" class="nav-btn-2 w-nav-link">Offers</a>
+
+<a href="https://paymatrix.in/home/pricing" class="nav-btn-2 w-nav-link">Pricing</a>
+<a href="https://paymatrix.in/auth/user/login" class="login-btn-2 w-nav-link">Log in</a>
+<a href="https://paymatrix.in/auth/user/signup" class="signup-btn-2 w-nav-link">Sign up</a>
+</nav>
+<div class="menu-button-2 w-nav-button">
+<div class="icon-6 w-icon-nav-menu"></div>
+</div>
+<a href="#" class="login-btn-right-2 w-nav-link">Log in</a>
+</div>
+</div> 
+
+<div class="w-layout-grid bill-payments">
+
+<div class="find-ifsc-page" style="margin-top: 72px;">
+<div class="container">
+<h1 class="ifsc-head">Easy EMI Calculator for Home loans, Personal Loans and Vehicle Loans.</h1>
+<div>Know your <strong>EMI</strong>, Loan amount, Tenure and Interest rates with our easy-to-use calculators</div>
+<div class="loan-cal-tab">
+<div class="emi-tab {{a}}" ng-click="openForm('emi')">
+<div class="tab-text">EMI<br> Calculator</div>
+</div>
+<div class="emi-tab {{b}}" ng-click="openForm('loan')">
+<div class="tab-text">Loan amount <br>Calculator</div>
+</div>
+<div class="emi-tab {{c}}" ng-click="openForm('tenure')">
+<div class="tab-text">Tenure<br>Calculator</div>
+</div>
+</div>
+<div class="loan-cal-div">
+<div class="w-form">
+<div id="Emi_Calculator" class="tabcontent" ng-show="emi_section">
+<form>
+<div class="form-group">
+<label for="loan_amount">Loan Amount</label>
+<input type="number" class="insur-form-input w-input" id="loan_amount" placeholder="Enter loan amount" name="loan_amount" ng-model="loan_amount" ng-change="Emi_Calculator()">
+</div>
+<div class="form-group">
+<label for="interest_rate">Annual Interest Rate (%)</label>
+<input type="number" class="insur-form-input w-input" id="interest_rate" placeholder="Enter interest rate" name="interest_rate" ng-model="interest_rate" ng-change="Emi_Calculator()">
+</div>
+<div class="form-group">
+<label for="Tenure">Tenure (in Months)</label>
+<input type="number" class="insur-form-input w-input" id="tenure" placeholder="Enter tenure" name="tenure" ng-model="tenure" ng-change="Emi_Calculator()">
+</div>
+</form>
+</div>
+<div id="Loan_Amount_Calculator" class="tabcontent" ng-show="loan_section">
+<form>
+<div class="form-group">
+<label for="emi_amount">EMI</label>
+<input type="number" class="insur-form-input w-input" id="emi" placeholder="Enter emi amount" name="emi" ng-model="emi" ng-change="Loan_Calculator()">
+</div>
+<div class="form-group">
+<label for="interest_rate">Annual Interest Rate (%)</label>
+<input type="number" class="insur-form-input w-input" id="interest_rate" placeholder="Enter interest rate" name="interest_rate" ng-model="interest_rate" ng-change="Loan_Calculator()">
+</div>
+<div class="form-group">
+<label for="Tenure">Tenure (in Months)</label>
+<input type="number" class="insur-form-input w-input" id="tenure" placeholder="Enter tenure" name="tenure" ng-model="tenure" ng-change="Loan_Calculator()">
+</div>
+</form>
+</div>
+<div id="Tenure_Calculator" class="tabcontent" ng-show="tenure_section">
+<form>
+<div class="form-group">
+<label for="loan_amount">Loan Amount</label>
+<input type="number" class="insur-form-input w-input" id="loan_amount" placeholder="Enter loan amount" name="loan_amount" ng-model="loan_amount" ng-change="Tenure_Calculator()">
+</div>
+<div class="form-group">
+<label for="interest_rate">Annual Interest Rate (%)</label>
+<input type="number" class="insur-form-input w-input" id="interest_rate" placeholder="Enter interest rate" name="interest_rate" ng-model="interest_rate" ng-change="Tenure_Calculator()">
+</div>
+<div class="form-group">
+<label for="emi">EMI</label>
+<input type="number" class="insur-form-input w-input" id="emi" placeholder="Enter emi" name="emi" ng-model="emi" ng-change="Tenure_Calculator()">
+</div>
+</form>
+</div>
+</div>
+<div class="loan-summary">
+<div class="summary-item">
+<div class="amount-summary">
+<div class="amount">
+<div class="amount-label">{{result_label}}</div>
+<h3 class="amount-number blue">{{result}}</h3>
+</div>
+<div class="amount">
+<div class="amount-label">Interest Payable</div>
+<h3 class="amount-number interest">₹{{Interest_Payable}}</h3>
+</div>
+<div class="amount">
+<div class="amount-label">Total Payment</div>
+<h3 class="amount-number green">₹{{total}}</h3>
+</div>
+</div>
+<div class="pie-chart">
+<div id="piechart"></div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<div class="ifsc-content">
+<div class="container">
+<div style="overflow-x:auto;margin-bottom: 32px;">
+<table class="table">
+<thead>
+<tr>
+<th>Year</th>
+<th>Principal (A)</th>
+<th>Interest (B)</th>
+<th>Total Payment (A+B)</th>
+<th>Balance</th>
+<th>Loan Paid To Date (% of Loan)</th>
+</tr>
+</thead>
+<tbody id="dynamic_rows">
+
+</tbody>
+</table>
+</div>
+<div class="ifsc-content-grid">
+<div id="w-node-6c6219805417-8249445d" class="ifsc-left-content">
+
+<div class="content-box" ng-show="emi_section">
+ <h4>What is EMI?</h4>
+<p>EMI stands for Equated Monthly Installment and represents the amount payable every month to the bank or any financial institution until your loan is fully paid off. It is usually calculated by adding the Principal amount (Loan amount borrowed) and the interest component and dividing by the borrowing tenure i.e. number of months.</p>
+<p>The composition of an EMI can change from month to month. While the Principal repayment component of the EMI increases, the interest component decreases with the vintage of the loan.</p>
+<p> The formula to calculate EMI: <br>
+E = P x r x ( 1 + r )<sup>n</sup> / ( ( 1 + r )<sup>n</sup> - 1 )
+where E is EMI, P is Principal Loan Amount, r is monthly rate of interest (For eg. If rate of interest is 14% per annum, then r = 14/12/100=0.011667), n is loan duration in number of months.</p>
+<p>
+For example, if you borrow ₹1,00,000 from the bank at 14% annual interest for a period of 3 years (i.e., 36 months), then EMI = ₹1,00,000 * 0.011667* (1 + 0.011667)36 / ((1 + 0.011667)36 - 1) = ₹3418. <br>
+This would mean that you shall be paying ₹3418 for 36 months to repay the loan completely. Your total repayment amount shall be ₹1,23,039 which includes principal of ₹1,00,000 and interest of ₹23,039.
+</p>
+<br>
+<h4>How to Use EMI Calculator?</h4>
+<p>Our EMI calculator enables you to calculate your EMI for any loan tenure you seek. You shall not only be able to view the summary of the Loan through our charts, but also can view the breakup of each re-payment for any month or year. This calculator can be used for all types of Loans - home loan, car loan, personal loan, education loan.</p>
+<p>Enter the following information in the EMI Calculator:
+<ul>
+<li>Principal loan amount you wish to avail (rupees)</li>
+<li>Loan term (months or years)</li>
+<li>Rate of interest (percentage)</li>
+</ul>
+</p>
+</div>
+
+<div class="content-box" ng-show="loan_section">
+<h4>What is EMI?</h4>
+<p>EMI stands for Equated Monthly Installment and represents the amount payable every month to the bank or any financial institution until your loan is fully paid off. It is usually calculated by adding the Principal amount (Loan amount borrowed) and the interest component and dividing by the borrowing tenure i.e. number of months.</p>
+<p>The composition of an EMI can change from month to month. While the Principal repayment component of the EMI increases, the interest component decreases with the vintage of the loan.</p>
+<p> The formula to calculate EMI: <br>
+E = P x r x ( 1 + r )<sup>n</sup> / ( ( 1 + r )<sup>n</sup> - 1 )
+where E is EMI, P is Principal Loan Amount, r is monthly rate of interest (For eg. If rate of interest is 14% per annum, then r = 14/12/100=0.011667), n is loan duration in number of months.</p>
+<p>
+For example, if you borrow ₹1,00,000 from the bank at 14% annual interest for a period of 3 years (i.e., 36 months), then EMI = ₹1,00,000 * 0.011667* (1 + 0.011667)36 / ((1 + 0.011667)36 - 1) = ₹3418. <br>
+This would mean that you shall be paying ₹3418 for 36 months to repay the loan completely. Your total repayment amount shall be ₹1,23,039 which includes principal of ₹1,00,000 and interest of ₹23,039.
+</p>
+<br>
+<h4>How to Use Loan Amount Calculator?</h4>
+<p>Our Loan Amount calculator enables you to calculate Loan amount eligible once you share the EMI you can afford, Loan tenure and the annual Interest rate. You shall not only be able to view the summary of the Loan through our charts, but also can view the breakup of each re-payment for any month or year. This calculator can be used for all types of Loans - home loan, car loan, personal loan, education loan.</p>
+<p>Enter the following information in the EMI Calculator:
+<ul>
+<li>EMI that you can afford in ₹</li>
+<li>Annual Interest rate (percentage)</li>
+<li>Loan tenure (in number of months)</li>
+</ul>
+</p>
+</div>
+
+<div class="content-box" ng-show="tenure_section">
+<h4>What is EMI?</h4>
+<p>EMI stands for Equated Monthly Installment and represents the amount payable every month to the bank or any financial institution until your loan is fully paid off. It is usually calculated by adding the Principal amount (Loan amount borrowed) and the interest component and dividing by the borrowing tenure i.e. number of months.</p>
+<p>The composition of an EMI can change from month to month. While the Principal repayment component of the EMI increases, the interest component decreases with the vintage of the loan.</p>
+<p> The formula to calculate EMI: <br>
+E = P x r x ( 1 + r )<sup>n</sup> / ( ( 1 + r )<sup>n</sup> - 1 )
+where E is EMI, P is Principal Loan Amount, r is monthly rate of interest (For eg. If rate of interest is 14% per annum, then r = 14/12/100=0.011667), n is loan duration in number of months.</p>
+<p>
+For example, if you borrow ₹1,00,000 from the bank at 14% annual interest for a period of 3 years (i.e., 36 months), then EMI = ₹1,00,000 * 0.011667* (1 + 0.011667)36 / ((1 + 0.011667)36 - 1) = ₹3418. <br>
+This would mean that you shall be paying ₹3418 for 36 months to repay the loan completely. Your total repayment amount shall be ₹1,23,039 which includes principal of ₹1,00,000 and interest of ₹23,039.
+</p>
+<br>
+<h4>How to Use Loan tenure Calculator?</h4>
+<p>Our Loan tenure calculator enables you to calculate loan tenure once you share the EMI you can afford, Loan amount and the annual Interest rate. You shall not only be able to view the summary of the Loan through our charts, but also can view the breakup of each re-payment for any month or year. This calculator can be used for all types of Loans - home loan, car loan, personal loan, education loan.</p>
+<p>Enter the following information in the EMI Calculator:
+<ul>
+<li>Principal loan amount you wish to avail (rupees)</li>
+<li>Annual Interest rate (percentage)</li>
+<li>EMI that you can afford in ₹</li>
+</ul>
+</p>
+</div>
+</div>
+<div id="w-node-a7bf3f1913ef-8249445d" class="ifsc-right-box">
+<div class="ifsc-page-right-box">
+<div class="ifsc-box-head"><h4>Suggested offerings</h4></div>
+<a href="https://paymatrix.in/" class="ifsc-box-link">Pay Rent on Credit card</a>
+<a href="https://paymatrix.in/home/bill_payments" class="ifsc-box-link">Pay bills using Credit card</a>
+<a href="https://paymatrix.in/rental-agreement" class="ifsc-box-link">Get Rent agreement online</a>
+<a href="https://paymatrix.in/rent-deposit-loan" class="ifsc-box-link">Apply Rent deposit Loan</a>
+<a href="https://paymatrix.in/home/offers" class="ifsc-box-link">View Paymatrix offers</a>
+</div>
+<div class="offer-ifsc-page-right">
+<div data-delay="4000" data-animation="slide" data-autoplay="1" data-duration="500" data-infinite="1" class="ifsc-slider w-slider">
+<div class="w-slider-mask">
+<div class="slide-2 w-slide"><a href="https://paymatrix.in/home/offers"><img src="https://s3-ap-southeast-1.amazonaws.com/paymatrixuploads/static/new_home/lucky12_offers.jpg" alt="offers" class="ifsc-slide-img"></a></div>
+<div class="w-slide"><a href="https://paymatrix.in/home/offers"><img src="https://s3-ap-southeast-1.amazonaws.com/paymatrixuploads/static/new_home/creditcard_offr.png" alt="offers" class="ifsc-slide-img"></a></div>
+</div>
+<div class="w-slider-arrow-left">
+<div class="w-icon-slider-left"></div>
+</div>
+<div class="w-slider-arrow-right">
+<div class="w-icon-slider-right"></div>
+</div>
+<div class="w-slider-nav w-round"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<div class="footer">
+<div class="w-layout-grid footer-grid">
+
+<div class="footer-up">
+<div class="container">
+<div class="footer-column">
+<div id="w-node-9b096e4df2c1-693d7966" class="footer-column-list">
+<a href="https://paymatrix.in/">
+<img src="https://paymatrixuploads.s3.ap-southeast-1.amazonaws.com/paymatrix/paymatrix_logo_v1_blue-removebg-preview.png" alt="Paymatrix logo" width="206" class="image-10">
+</a>
+<a href="/cdn-cgi/l/email-protection#25565055554a57516555445c484451574c5d0b4c4b1a5650474f40465118434040414744464e" class="footer-support-link">Email Us</a>
+<a href="https://www.facebook.com/paymatrix/" rel="noopener" target="_blank" class="social-link w-inline-block">
+<i class="fab fa-facebook-square"></i>
+</a>
+<a href="https://twitter.com/Paymatrix_India?lang=en" rel="noopener" target="_blank" class="social-link w-inline-block">
+<i class="fab fa-twitter-square"></i>
+</a>
+<a href="https://www.linkedin.com/company/6641685/admin/" rel="noopener" target="_blank" class="social-link w-inline-block">
+<i class="fab fa-linkedin"></i>
+</a>
+<a href="https://www.youtube.com/channel/UC4XF_xB_XF9ip2disaABCPQ" rel="noopener" target="_blank" class="social-link w-inline-block">
+<i class="fab fa-youtube-square"></i>
+</a>
+<a href="https://www.instagram.com/paymatrix_india/" rel="noopener" target="_blank" class="social-link w-inline-block">
+<i class="fab fa-instagram"></i>
+</a>
+<a href="https://play.google.com/store/apps/details?id=in.paymatrix.mobile" class="footer-support-link" src="">
+Download App
+</a>
+<a href="https://play.google.com/store/apps/details?id=in.paymatrix.mobile">
+<img src="https://paymatrixuploads.s3.ap-southeast-1.amazonaws.com/static/icons/google-play-badge.png" alt="logo" class="">
+</a>
+</div>
+<div id="w-node-9b096e4df2c5-693d7966" class="footer-column-list">
+<div class="column-head">Paymatrix</div>
+<ul class="w-list-unstyled">
+<li class="list-item"><a href="https://paymatrix.in/home/aboutus" class="footer-link">About Us</a></li>
+<li class="list-item"><a href="https://paymatrix.in/home/offers" class="footer-link">Offers</a></li>
+<li class="list-item"><a href="https://paymatrix.in/home/pricing" class="footer-link">Pricing</a></li>
+<li class="list-item"><a href="https://paymatrix.in/home/benefits" class="footer-link">Benefits</a></li>
+<li class="list-item"><a href="https://paymatrix.in/home/winners" class="footer-link">Winners</a></li>
+<li class="list-item"><a href="https://paymatrix.in/home/careers" class="footer-link">Careers</a></li>
+<li class="list-item"><a href="https://paymatrix.in/home/referandearn" class="footer-link">Refer and Earn</a></li>
+<li class="list-item"><a href="https://paymatrix.in/home/sitemap" class="footer-link">Site map</a></li>
+</ul>
+</div>
+<div id="w-node-9b096e4df2de-693d7966" class="footer-column-list">
+<div class="column-head">Offerings</div>
+<ul class="w-list-unstyled">
+<li class="list-item"><a href="https://paymatrix.in/business-payments" class="footer-link">Pay Business Expenses</a></li>
+<li class="list-item"><a href="https://paymatrix.in/home/bill_payments" class="footer-link">Pay bills using Credit card</a></li>
+<li class="list-item"><a href="https://paymatrix.in/home/applyloan" class="footer-link">Get a Quick Personal Loan</a></li>
+</ul>
+</div>
+<div id="w-node-9b096e4df2f5-693d7966" class="footer-column-list">
+<div class="column-head">Support</div>
+<ul class="w-list-unstyled">
+<li class="list-item"><a href="https://paymatrix.in/home/contact" class="footer-link">Contact Us</a></li>
+<li class="list-item"><a href="https://paymatrix.in/faqs" class="footer-link">FAQs</a></li>
+<li class="list-item"><a href="https://paymatrix.in/home/privacy" class="footer-link">Privacy Policy</a></li>
+<li class="list-item"><a href="https://www.notion.so/Responsible-Disclosure-Policy-bb286905aa4b4ca48e51e69c3a24eef2" target="_blank" class="footer-link">Responsible Disclosure Policy </a></li>
+<li class="list-item"><a href="https://paymatrix.in/home/tandc" class="footer-link">Terms &amp; Conditions</a></li>
+</ul>
+</div>
+<div id="w-node-9b096e4df30b-693d7966" class="footer-column-list">
+<div class="column-head">Useful tools and links</div>
+<ul class="w-list-unstyled">
+<li class="list-item"><a href="https://paymatrix.in/rental-agreement" class="footer-link">Rent Agreements</a></li>
+<li class="list-item"><a href="https://paymatrix.in/receipts" class="footer-link">Rent receipts</a></li>
+<li class="list-item"><a href="https://paymatrix.in/muthoot-gold-loan" class="footer-link">Quick Gold Loan</a></li>
+<li class="list-item"><a href="https://paymatrix.in/know-your-credit-card" class="footer-link">Know your Credit card</a></li>
+<li class="list-item"><a href="https://paymatrix.in/find-ifsc-code" class="footer-link">Find IFSC code</a></li>
+<li class="list-item"><a href="https://paymatrix.in/reward-point-converter" class="footer-link">Reward Point Converter</a></li>
+<li class="list-item"><a href="https://paymatrix.in/loan-emi-calculator" class="footer-link">Loan EMI Calculator</a></li>
+<li class="list-item"><a href="https://paymatrix.in/home/hostels" class="footer-link">Co-living spaces</a></li>
+<li class="list-item"><a href="https://paymatrix.in/home/workspaces" class="footer-link">Co-working spaces</a></li>
+<li class="list-item"><a href="https://paymatrix.in/home/lending_partners" class="footer-link">Lending Partners</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+
+<div class="footer-down-2">
+<div class="container-fluid">
+<div class="hr-footer"></div>
+<div class="text-block-11">© Copyright 2015-2022 Paymatrix. All Rights Reserved.</div>
+</div>
+</div>
+
+</div>
+</div> 
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.4.1.min.220afd743d.js" type="40c274b4ff49de37763dd666-text/javascript" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js" type="40c274b4ff49de37763dd666-text/javascript"></script>
+<script src="https://www.gstatic.com/charts/loader.js" type="40c274b4ff49de37763dd666-text/javascript"></script>
+<script src="https://paymatrix.in//application/static/js/loancal/webflow.js" type="40c274b4ff49de37763dd666-text/javascript"></script>
+<!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
+<script type="40c274b4ff49de37763dd666-text/javascript">
+      // Load google charts
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Entity', 'Value'],
+          ['Principal', 86],
+          ['Interest', 14]
+          ]);
+        var options = {'title':'Break-up of Total Payment (Principal Repayment , Interest paid)'};
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+        chart.draw(data, options);
+      }
+    </script>
+<script type="40c274b4ff49de37763dd666-text/javascript">
+      var app = angular.module('myApp', []);
+
+      app.controller('myCtrl', function($scope) {
+        $scope.emi = 0;
+        $scope.loan_amount = 100000;
+        $scope.interest_rate = 10;
+        $scope.tenure = 6;
+        $scope.emi = ($scope.loan_amount * $scope.interest_rate*0.0008333 * Math.pow((1+$scope.interest_rate*0.0008333),$scope.tenure))/(Math.pow((1+$scope.interest_rate*0.0008333),$scope.tenure) - 1);
+        $scope.emi = Math.round($scope.emi * 100) / 100;
+        $scope.emi_section = true;
+        $scope.loan_section = false;
+        $scope.tenure_section = false;
+        $scope.a = "active";
+        $scope.b = "";
+        $scope.c = "";
+        $scope.result_label = "EMI";
+        $scope.result = "₹17156.12";
+        $scope.Interest_Payable = "16161.20";
+        $scope.total = "116161.20";
+        $scope.openForm = function(id){
+         if (id == "emi") {
+          $scope.emi_section = true;
+          $scope.loan_section = false;
+          $scope.tenure_section = false;
+          $scope.a = "active";
+          $scope.b = "";
+          $scope.c = "";
+          $scope.result_label = "EMI";
+          $scope.result = "₹" + $scope.emi.toFixed(2);
+        }
+        if (id == "loan") {
+          $scope.loan_section = true;
+          $scope.emi_section = false;
+          $scope.tenure_section = false;
+          $scope.a = "";
+          $scope.b = "active";
+          $scope.c = "";
+          $scope.result_label = "Loan Amount";
+          $scope.result = "₹" + $scope.loan_amount.toFixed(2);
+        }
+        if (id == "tenure") {
+          $scope.tenure_section = true;
+          $scope.emi_section = false;
+          $scope.loan_section = false;
+          $scope.a = "";
+          $scope.b = "";
+          $scope.c = "active";
+          $scope.result_label = "Tenure";
+          $scope.result = $scope.tenure.toFixed(2);
+        }
+      }
+      $scope.Emi_Calculator = function(){
+        $scope.emi = ($scope.loan_amount * $scope.interest_rate*0.0008333 * Math.pow((1+$scope.interest_rate*0.0008333),$scope.tenure))/(Math.pow((1+$scope.interest_rate*0.0008333),$scope.tenure) - 1);
+        $scope.emi = Math.round($scope.emi * 100) / 100;
+        $scope.result_label = "EMI";
+        $scope.result = "₹" + $scope.emi.toFixed(2);
+        $scope.table();
+        $scope.piechart();
+        //$scope.emi = Math.round($scope.emi * 100) / 100;
+      }
+      $scope.Loan_Calculator = function(){
+        $scope.loan_amount = ($scope.emi*(Math.pow((1+$scope.interest_rate*0.0008333),$scope.tenure) - 1))/($scope.interest_rate*0.0008333 * Math.pow((1+$scope.interest_rate*0.0008333),$scope.tenure));
+        $scope.result_label = "Loan";
+        $scope.result = "₹" + $scope.loan_amount.toFixed(2);
+        $scope.table();
+        $scope.piechart();
+      }
+      $scope.Tenure_Calculator = function(){
+       if(1 > (($scope.loan_amount*$scope.interest_rate*0.0008333)/$scope.emi)){
+        $scope.tenure = Math.log(1-(($scope.loan_amount*$scope.interest_rate*0.0008333)/$scope.emi))/Math.log(1/(1+($scope.interest_rate*0.0008333)));
+              //$scope.tenure = Math.ceil($scope.tenure);
+              $scope.result_label = "Tenure";
+              $scope.result = $scope.tenure.toFixed(2);
+              $scope.table();
+              $scope.piechart();
+            }else{
+              $scope.tenure = 0;
+            }
+
+
+          }
+          $scope.table = function(){
+            document.getElementById("dynamic_rows").innerHTML = "";
+            var c = 1,d = 1,count=0,a=0,b=0,p=0,q=0;
+            var row = "";
+            var newDate;
+            var date = new Date();
+            d = $scope.loan_amount;
+            while(c > 0){
+             c = d*(1+$scope.interest_rate*0.0008333) - $scope.emi;
+             a = a + $scope.emi - (d*$scope.interest_rate*0.0008333);
+             b = (a/$scope.loan_amount)*100;
+             if(c<1)
+             {
+              c = 0;
+              b = 100;
+            }
+            newDate = new Date(date.setMonth(date.getMonth()+1));
+            p = p + d*$scope.interest_rate*0.0008333;
+            q = q + $scope.emi;
+            row = row +"<tr><td>"
+            +(newDate.getMonth()+1) + "-" + newDate.getFullYear()
+            +"</td>"+"<td>"
+            +($scope.emi - (d*$scope.interest_rate*0.0008333)).toFixed(0)
+            +"</td>"+"<td>"
+            +(d*$scope.interest_rate*0.0008333).toFixed(0)
+            +"</td>"+"<td>"
+            +$scope.emi.toFixed(0)
+            +"</td>"+"<td>"
+            +c.toFixed(0)
+            +"</td>"+"<td>"
+            +b.toFixed(2)
+            +"%</td></tr>";
+            d = c;
+            count = count+1;
+          }
+          $scope.Interest_Payable = p.toFixed(2);
+          $scope.total = q.toFixed(2);
+          document.getElementById("dynamic_rows").innerHTML = row;
+          
+        }
+
+        $scope.piechart = function(){
+          var principal = ($scope.loan_amount/($scope.tenure*$scope.emi))*100;
+          var interest = 100 - principal;
+          var data = google.visualization.arrayToDataTable([
+            ['Entity', 'Value'],
+            ['Principal', principal],
+            ['Interest', interest]
+            ]);
+          var options = {'title':'Break-up of Total Payment (Principal Repayment , Interest paid) Chart'};
+          var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+          chart.draw(data, options);
+        }
+
+        $scope.table();
+
+      });
+    </script>
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TL657WH"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+
+<script type="40c274b4ff49de37763dd666-text/javascript">
+    var email = '';
+    if(email == ""){
+    window.intercomSettings = {
+        app_id: "stpeeqx6"
+    };
+    }else{
+        window.intercomSettings = {
+        app_id: "stpeeqx6",
+        name: "",
+        email: "", 
+        user_id: "",
+        phone: "",
+        user_hash: "58650f77a1ffcf0feecbde00ff559446fef3a96cac5110a76d548137a8392bad"
+    };
+    }
+
+</script>
+<script type="40c274b4ff49de37763dd666-text/javascript">(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',w.intercomSettings);}else{var d=document;var i=function(){i.c(arguments);};i.q=[];i.c=function(args){i.q.push(args);};w.Intercom=i;var l=function(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/stpeeqx6';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);};if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();</script>
+
+
+<script type="40c274b4ff49de37763dd666-text/javascript">
+!function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware"];analytics.factory=function(e){return function(){var t=Array.prototype.slice.call(arguments);t.unshift(e);analytics.push(t);return analytics}};for(var e=0;e<analytics.methods.length;e++){var key=analytics.methods[e];analytics[key]=analytics.factory(key)}analytics.load=function(key,e){var t=document.createElement("script");t.type="text/javascript";t.async=!0;t.src="https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n);analytics._loadOptions=e};analytics._writeKey="TimQiusAUAfCHl5G6QLQimFFor1QZnsD";;analytics.SNIPPET_VERSION="4.15.3";
+analytics.load("TimQiusAUAfCHl5G6QLQimFFor1QZnsD");
+analytics.page();
+}}();
+</script>
+ <script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="40c274b4ff49de37763dd666-|49" defer=""></script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194" integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw==" data-cf-beacon='{"rayId":"70a374524ebd7348","version":"2021.12.0","r":1,"token":"83c3e131991b40c1ab4a0eac0fb62dc1","si":100}' crossorigin="anonymous"></script>
+</body>
+</html>

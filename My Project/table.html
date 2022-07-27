@@ -1,0 +1,163 @@
+</script>
+<script type="40c274b4ff49de37763dd666-text/javascript">
+      var app = angular.module('myApp', []);
+
+      app.controller('myCtrl', function($scope) {
+        $scope.emi = 0;
+        $scope.loan_amount = 100000;
+        $scope.interest_rate = 10;
+        $scope.tenure = 6;
+        $scope.emi = ($scope.loan_amount * $scope.interest_rate*0.0008333 * Math.pow((1+$scope.interest_rate*0.0008333),$scope.tenure))/(Math.pow((1+$scope.interest_rate*0.0008333),$scope.tenure) - 1);
+        $scope.emi = Math.round($scope.emi * 100) / 100;
+        $scope.emi_section = true;
+        $scope.loan_section = false;
+        $scope.tenure_section = false;
+        $scope.a = "active";
+        $scope.b = "";
+        $scope.c = "";
+        $scope.result_label = "EMI";
+        $scope.result = "₹17156.12";
+        $scope.Interest_Payable = "16161.20";
+        $scope.total = "116161.20";
+        $scope.openForm = function(id){
+         if (id == "emi") {
+          $scope.emi_section = true;
+          $scope.loan_section = false;
+          $scope.tenure_section = false;
+          $scope.a = "active";
+          $scope.b = "";
+          $scope.c = "";
+          $scope.result_label = "EMI";
+          $scope.result = "₹" + $scope.emi.toFixed(2);
+        }
+        if (id == "loan") {
+          $scope.loan_section = true;
+          $scope.emi_section = false;
+          $scope.tenure_section = false;
+          $scope.a = "";
+          $scope.b = "active";
+          $scope.c = "";
+          $scope.result_label = "Loan Amount";
+          $scope.result = "₹" + $scope.loan_amount.toFixed(2);
+        }
+        if (id == "tenure") {
+          $scope.tenure_section = true;
+          $scope.emi_section = false;
+          $scope.loan_section = false;
+          $scope.a = "";
+          $scope.b = "";
+          $scope.c = "active";
+          $scope.result_label = "Tenure";
+          $scope.result = $scope.tenure.toFixed(2);
+        }
+      }
+      $scope.Emi_Calculator = function(){
+        $scope.emi = ($scope.loan_amount * $scope.interest_rate*0.0008333 * Math.pow((1+$scope.interest_rate*0.0008333),$scope.tenure))/(Math.pow((1+$scope.interest_rate*0.0008333),$scope.tenure) - 1);
+        $scope.emi = Math.round($scope.emi * 100) / 100;
+        $scope.result_label = "EMI";
+        $scope.result = "₹" + $scope.emi.toFixed(2);
+        $scope.table();
+        $scope.piechart();
+        //$scope.emi = Math.round($scope.emi * 100) / 100;
+      }
+      $scope.Loan_Calculator = function(){
+        $scope.loan_amount = ($scope.emi*(Math.pow((1+$scope.interest_rate*0.0008333),$scope.tenure) - 1))/($scope.interest_rate*0.0008333 * Math.pow((1+$scope.interest_rate*0.0008333),$scope.tenure));
+        $scope.result_label = "Loan";
+        $scope.result = "₹" + $scope.loan_amount.toFixed(2);
+        $scope.table();
+        $scope.piechart();
+      }
+      $scope.Tenure_Calculator = function(){
+       if(1 > (($scope.loan_amount*$scope.interest_rate*0.0008333)/$scope.emi)){
+        $scope.tenure = Math.log(1-(($scope.loan_amount*$scope.interest_rate*0.0008333)/$scope.emi))/Math.log(1/(1+($scope.interest_rate*0.0008333)));
+              //$scope.tenure = Math.ceil($scope.tenure);
+              $scope.result_label = "Tenure";
+              $scope.result = $scope.tenure.toFixed(2);
+              $scope.table();
+              $scope.piechart();
+            }else{
+              $scope.tenure = 0;
+            }
+
+
+          }
+          $scope.table = function(){
+            document.getElementById("dynamic_rows").innerHTML = "";
+            var c = 1,d = 1,count=0,a=0,b=0,p=0,q=0;
+            var row = "";
+            var newDate;
+            var date = new Date();
+            d = $scope.loan_amount;
+            while(c > 0){
+             c = d*(1+$scope.interest_rate*0.0008333) - $scope.emi;
+             a = a + $scope.emi - (d*$scope.interest_rate*0.0008333);
+             b = (a/$scope.loan_amount)*100;
+             if(c<1)
+             {
+              c = 0;
+              b = 100;
+            }
+            newDate = new Date(date.setMonth(date.getMonth()+1));
+            p = p + d*$scope.interest_rate*0.0008333;
+            q = q + $scope.emi;
+            row = row +"<tr><td>"
+            +(newDate.getMonth()+1) + "-" + newDate.getFullYear()
+            +"</td>"+"<td>"
+            +($scope.emi - (d*$scope.interest_rate*0.0008333)).toFixed(0)
+            +"</td>"+"<td>"
+            +(d*$scope.interest_rate*0.0008333).toFixed(0)
+            +"</td>"+"<td>"
+            +$scope.emi.toFixed(0)
+            +"</td>"+"<td>"
+            +c.toFixed(0)
+            +"</td>"+"<td>"
+            +b.toFixed(2)
+            +"%</td></tr>";
+            d = c;
+            count = count+1;
+          }
+          $scope.Interest_Payable = p.toFixed(2);
+          $scope.total = q.toFixed(2);
+          document.getElementById("dynamic_rows").innerHTML = row;
+          
+        }
+
+        $scope.piechart = function(){
+          var principal = ($scope.loan_amount/($scope.tenure*$scope.emi))*100;
+          var interest = 100 - principal;
+          var data = google.visualization.arrayToDataTable([
+            ['Entity', 'Value'],
+            ['Principal', principal],
+            ['Interest', interest]
+            ]);
+          var options = {'title':'Break-up of Total Payment (Principal Repayment , Interest paid) Chart'};
+          var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+          chart.draw(data, options);
+        }
+
+        $scope.table();
+
+      });
+
+
+
+
+      <script type="40c274b4ff49de37763dd666-text/javascript">
+        // Load google charts
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+          var data = google.visualization.arrayToDataTable([
+            ['Entity', 'Value'],
+            ['Principal', 86],
+            ['Interest', 14]
+            ]);
+          var options = {'title':'Break-up of Total Payment (Principal Repayment , Interest paid)'};
+          var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+          chart.draw(data, options);
+        }
+      </script>
+
+
+
+      

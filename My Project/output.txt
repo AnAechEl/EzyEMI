@@ -1,0 +1,1 @@
+Total amount to be paid: <output name="result" id="result"></output>
